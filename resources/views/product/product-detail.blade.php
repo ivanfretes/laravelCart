@@ -36,7 +36,7 @@
 		            <p class="in-para"> {{ $product->category->name }} </p>
 		            <div class="price_single">
 		                <span class="reducedfrom item_price">{{ $product->price }}</span>
-		                <a href="#">click for offer</a>
+		                <a href="#">PROMOCIONADO</a>
 		                <div class="clearfix"></div>
 		            </div>
 		            <h4 class="quick">DESCRIPCIÓN:</h4>
@@ -73,7 +73,7 @@
 		        <nav class="nav-sidebar">
 		            <ul class="nav tabs">
 		                <li class="active"><a href="#tab1" data-toggle="tab">Descripción</a></li>
-		                <li class=""><a href="#tab2" data-toggle="tab">Información Adicional</a></li>
+		                <li class=""><a href="#tab2" data-toggle="tab">Solicitar más información</a></li>
 		            </ul>
 		        </nav>
 		        <div class="tab-content one">
@@ -83,7 +83,7 @@
 		                		!empty($product->description ))
 		                    	{!! $product->description !!}
 		                    @else
-		                    	<p>Contenido sin descripción</p>
+		                    	<p>Sin descripción</p>
 		                    @endif
 		                </div>
 
@@ -91,7 +91,36 @@
 		            <div class="tab-pane text-style" id="tab2">
 
 		                <div class="facts">
-		                    <p>Información adicional</p> 
+		                	<h3>Desea solicitar un asesor</h3><br>
+		                   	<form action="" method="post">
+
+		                   		<div class="row">
+		                   			<div class="col-md-4">
+		                   				<label>Nombre y Apellido</label>
+		                   				<input type="text" name="name" 
+		                   					   class="form-control">
+		                   			</div>
+		                   			<div class="col-md-4">
+		                   				<label>Telefono</label>
+		                   				<input type="text" name="phone" 
+		                   					   class="form-control">
+		                   			</div>
+		                   			<div class="col-md-4">
+		                   				<label>Email</label>
+		                   				<input type="text" name="mail" 
+		                   					   class="form-control">
+		                   			</div>
+		                   			<div class="col-md-12">
+		                   				<label>Desea agregar algo?</label>
+		                   				<textarea name="comentary" 
+		                   					   class="form-control"></textarea>
+		                   			</div>
+		                   			<div class="col-md-12" style="margin-top:20px; ">
+		                   				<button type="submit" class="btn btn-success btn-block">Enviar</button>
+		                   			</div>
+								</div>
+		                   		
+							</form>
 		                </div>
 
 		            </div>

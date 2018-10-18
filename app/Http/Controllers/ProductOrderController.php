@@ -70,8 +70,6 @@ class ProductOrderController extends Controller
     }
 
 
-    
-
     /**
      * Anexa un producto al pedido/order creado
      * 
@@ -82,7 +80,8 @@ class ProductOrderController extends Controller
         $this->initialize($request);
 
         // Si existe un order/pedido activo, anexa el producto
-        if ($this->orderActive){
+        // y la cantidad del pedido es != 0
+        if ($this->orderActive && $request->quantity > 0){
             $productOrder = new ProductOrder;
             $productOrder->order_id = $this->currentOrder->id;
             $productOrder->status = 'P';
@@ -127,15 +126,22 @@ class ProductOrderController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * Retorna un producto X actualizado en un cantidad
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        if ($request->quantity > 0){
+
+            $productOrder = new ProductOrder;
+            $productOrder = $request->quantity;
+            $productOrder->save();
+
+            return $productOrder;
+        }
     }
 
 

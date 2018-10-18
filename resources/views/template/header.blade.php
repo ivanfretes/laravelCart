@@ -88,8 +88,9 @@
                             </p>
                         @else 
                             <p>
-                                {{ dd(isset($orderActive)) }}
-                                
+                                <a href="#" >
+                                    Carrito Vacio    
+                                </a>
                             </p>
                         @endif
                         

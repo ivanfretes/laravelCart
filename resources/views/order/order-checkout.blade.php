@@ -45,33 +45,43 @@
                 <table class="table-heading simpleCart_shelfItem">
                     <tr>
                         <th class="table-grid">Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Subtotal</th>
+                        <th class="text-right">Precio</th>
+                        <th class="text-right">Cantidad</th>
+                        <th class="text-right">Subtotal</th>
                     </tr>
 
                     @foreach($productOrders as $productOrder)
                         <tr class="cart-header">
-                            <td class="ring-in">
-                                <a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
+                            <td>
+                                <a href="{{ $productOrder->product->id }} " class="at-in">
+                    <img src="{{ 
+                        @url("storage").'/'.$productOrder->product->image }}" class="img-responsive" style="max-height: 150px; border:1px solid #ddd;">
+                                </a>
                                 <div class="sed">
                                     <h5><a href="single.html"></a></h5>
                                     <p>
+                                        <h3 style="margin-top: 20px;">
                                         {{ $productOrder->product->title }}
+                                        </h3>
                                     </p>
 
                                 </div>
                             </td>
                             
                             {{--  Precio --}}
-                            <td>{{ $productOrder->product->price }}</td>
+                            <td class="text-right">{{ $productOrder->product->price }}</td>
                             
-                            <td>{{ $productOrder->quantity }}</td>
+                            <td class="text-right">{{ $productOrder->quantity }}</td>
+
+                            {{--  Subtotal - precio x cantidad --}}
+                            <td class="text-right">{{ $productOrder->product->price }}</td>
+
+                           
                             {{-- <td>FREE SHIPPING</td> --}}
-                            <td class="add-check">
-                                <a  class="item_add hvr-skew-backward" 
-                                    href="#">Actualizar</a>
-                                <a href="#" class="btn btn-danger">Eliminar</a>
+                            <td class="add-check text-right">
+                                <a class="item_add hvr-skew-backward" 
+                                   href="#">Actualizar</a>
+                                <a href="{{ @route }}" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>    
                     @endforeach
@@ -81,10 +91,10 @@
         </div>
         <div class="produced">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-2 col-md-offset-6">
                     <a href="#" class="hvr-skew-backward">Solicitar</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <a href="{{ route('order.cancel') }}" class="hvr-skew-backward">Cancelar Pedido</a>
                 </div>
             </div>
