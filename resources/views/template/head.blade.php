@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Keywords de Aries Salud" />
 
-	<title>Aries Salud - Productos de Reabilitación</title>
+	<title>{{ $business_name }} - {{ $title_page }}</title>
 
 	<script type="text/javascript">
 		addEventListener("load", function() {

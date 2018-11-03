@@ -2,9 +2,9 @@
 	<div class="footer-middle">
 		<div class="container">
 			<div class="col-md-3 footer-middle-in">
-				<a href="index.html"><img src="{{ @url("assets/images/ariesalud-logo.png") }}"  class="img-responsive" alt=""></a>
+				<a href="index.html"><img src="{{ $logo_footer }}"  class="img-responsive" alt=""></a>
 				<p>
-					Una empresa que se dedica al mantenimiento de equipos electro-medicos, insumos medicos descartables. Con mas de siete años de experiencia proveyendo productos con certificados internacionales.
+					{{ $business_description }}
 				</p>
 			</div>
 			
